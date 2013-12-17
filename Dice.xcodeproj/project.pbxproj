@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E2F4D6E185B354500D230BD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F4D6D185B354500D230BD /* main.cpp */; };
 		8E2F4D70185B354500D230BD /* Dice.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8E2F4D6F185B354500D230BD /* Dice.1 */; };
+		8E2F4D78185B363800D230BD /* Dice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F4D76185B363800D230BD /* Dice.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		8E2F4D6A185B354500D230BD /* Dice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dice; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2F4D6D185B354500D230BD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8E2F4D6F185B354500D230BD /* Dice.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Dice.1; sourceTree = "<group>"; };
+		8E2F4D76185B363800D230BD /* Dice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dice.cpp; sourceTree = "<group>"; };
+		8E2F4D77185B363800D230BD /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 			children = (
 				8E2F4D6D185B354500D230BD /* main.cpp */,
 				8E2F4D6F185B354500D230BD /* Dice.1 */,
+				8E2F4D76185B363800D230BD /* Dice.cpp */,
+				8E2F4D77185B363800D230BD /* Dice.h */,
 			);
 			path = Dice;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E2F4D78185B363800D230BD /* Dice.cpp in Sources */,
 				8E2F4D6E185B354500D230BD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
