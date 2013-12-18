@@ -9,11 +9,27 @@
 #ifndef __Dice__Dice__
 #define __Dice__Dice__
 
-#include <ctime> // for time()
 #include <cstdlib> // for srand(), rand()
+#include <vector>
 #include <iostream>
 
 using namespace std;
+
+// 面数
+enum kSarFace
+{
+    kTetrahedral = 4,
+    kHexahedral = 6,
+    kOctahedral = 8,
+    kIcosahedron = 10,
+    kDodecahedron = 12
+};
+
+// 投げる回数
+enum kRollCount
+{
+    kDefaultRoll = 1
+};
 
 class Dice
 {
@@ -21,27 +37,23 @@ public:
     // コンストラクタ
     Dice();
     // ダイスロール
-    void Roll();
-    // 面数指定
-    void Roll(int SarFace);
     // RollCount D SarFace (例：3D6 6面ダイスを3回)
-    void Roll(int RollCount, int SarFace);
+    void roll(int SarFace = kHexahedral, int RollCount = kDefaultRoll);
     // 出目表示
-    void Display();
+    void display();
     // 出目リセット
-    void Reset();
-    
-    // 出目取得関数
+    void reset();
+    // 出目合計取得
     int getRollResult();
+    // 出目履歴取得
+    vector<int> getRollHistory();
     
 private:
-    // ダイスの仕様
-    int SarFace;
-    int RollCount;
-    
-    // 結果
-    int LastRoll;
-    int TotalRolls;
-    int TotalScore;
+    // 履歴
+    vector<int> rollHistory;
+    // 振った回数
+    int totalRolls;
+    // 出目合計
+    int totalScore;
 };
 #endif /* defined(__Dice__Dice__) */

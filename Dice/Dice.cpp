@@ -8,51 +8,47 @@
 
 #include "Dice.h"
 
-Dice::Dice() : LastRoll(0), TotalRolls(0), TotalScore(0)
+Dice::Dice() : totalRolls(0), totalScore(0)
 {
-    //
-    srand(static_cast<unsigned int>(time(0)));
-
 }
 
-void Dice::Roll()
+void Dice::roll(int sarFace, int rollCount)
 {
-    LastRoll = 0;
-    TotalRolls++;
+    cout << "sarFaceRoll : " << sarFace << endl;
+    cout << "rollCount : " << rollCount << endl;
     
-    // 乱数取得
-    LastRoll = (rand() % 6) + 1;
-    
-    TotalScore += LastRoll;
-}
-void Dice::Roll(int sarFace)
-{
-    LastRoll = 0;
-    TotalRolls++;
-    
-    // 乱数取得
-    LastRoll = (rand() % sarFace) + 1;
-    
-    TotalScore += LastRoll;
+    // 振った回数
+    totalRolls = rollCount;
+    for (int i = 0; i < rollCount; i++) {
+        // 出目履歴出
+        rollHistory.push_back((arc4random() % sarFace) + 1);
+        cout << "rollHistory : " << rollHistory[i] << endl;
+        // 出目合計値
+        totalScore += rollHistory[i];
+    }
 }
 
-void Dice::Display()
+void Dice::display()
 {
-    cout << "LastRoll : " << LastRoll << endl;
-    cout << "TotalRolls : " << TotalRolls << endl;
-    cout << "TotalScore : " << TotalScore << endl << endl;
+    cout << "TotalRolls : " << totalRolls << endl;
+    cout << "TotalScore : " << totalScore << endl;
 }
 
 int Dice::getRollResult()
 {
-    return TotalScore;
+    return totalScore;
 }
 
-void Dice::Reset()
+vector<int> Dice::getRollHistory()
 {
-    LastRoll = 0;
-    TotalRolls = 0;
-    TotalScore = 0;
+    return rollHistory;
+}
+
+void Dice::reset()
+{
+    rollHistory.clear();
+    totalRolls = 0;
+    totalScore = 0;
 }
 
 
