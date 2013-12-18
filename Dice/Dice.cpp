@@ -12,16 +12,16 @@ Dice::Dice() : totalRolls(0), totalScore(0)
 {
 }
 
-void Dice::roll(int sarFace, int rollCount)
+void Dice::roll(int surface, int rollCount)
 {
-    cout << "sarFaceRoll : " << sarFace << endl;
+    cout << "surfaceRoll : " << surface << endl;
     cout << "rollCount : " << rollCount << endl;
     
     // 振った回数
     totalRolls = rollCount;
     for (int i = 0; i < rollCount; i++) {
         // 出目履歴出
-        rollHistory.push_back((arc4random() % sarFace) + 1);
+        rollHistory.push_back((arc4random() % surface) + 1);
         cout << "rollHistory : " << rollHistory[i] << endl;
         // 出目合計値
         totalScore += rollHistory[i];
