@@ -16,7 +16,7 @@
 using namespace std;
 
 // 面数
-enum kSarFace
+enum kSurface
 {
     kTetrahedral = 4,
     kHexahedral = 6,
@@ -37,8 +37,8 @@ public:
     // コンストラクタ
     Dice();
     // ダイスロール
-    // RollCount D SarFace (例：3D6 6面ダイスを3回)
-    void roll(int SarFace = kHexahedral, int RollCount = kDefaultRoll);
+    // RollCount D Surface (例：3D6 6面ダイスを3回)
+    void roll(int Surface = kHexahedral, int RollCount = kDefaultRoll);
     // 出目表示
     void display();
     // 出目リセット
