@@ -14,34 +14,35 @@ Dice::Dice() : totalRolls(0), totalScore(0)
 
 void Dice::roll(int surface, int rollCount)
 {
-    cout << "surfaceRoll : " << surface << endl;
-    cout << "rollCount : " << rollCount << endl;
+    std::cout << "surfaceRoll : " << surface << std::endl;
+    std::cout << "rollCount : " << rollCount << std::endl;
     
     // 振った回数
-    totalRolls = rollCount;
+    this->totalRolls = rollCount;
     for (int i = 0; i < rollCount; i++) {
         // 出目履歴出
-        rollHistory.push_back((arc4random() % surface) + 1);
-        cout << "rollHistory : " << rollHistory[i] << endl;
+        this->rollHistory.push_back((arc4random_uniform(surface)) + 1);
+//        this->rollHistory.push_back((arc4random() % surface) + 1);
+        std::cout << "rollHistory : " << this->rollHistory[i] << std::endl;
         // 出目合計値
-        totalScore += rollHistory[i];
+        this->totalScore += this->rollHistory[i];
     }
 }
 
 void Dice::display()
 {
-    cout << "TotalRolls : " << totalRolls << endl;
-    cout << "TotalScore : " << totalScore << endl;
+    std::cout << "TotalRolls : " << this->totalRolls << std::endl;
+    std::cout << "TotalScore : " << this->totalScore << std::endl;
 }
 
 int Dice::getRollResult()
 {
-    return totalScore;
+    return this->totalScore;
 }
 
-vector<int> Dice::getRollHistory()
+std::vector<int> Dice::getRollHistory()
 {
-    return rollHistory;
+    return this->rollHistory;
 }
 
 void Dice::reset()

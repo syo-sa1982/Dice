@@ -9,11 +9,11 @@
 #ifndef __Dice__Dice__
 #define __Dice__Dice__
 
-#include <cstdlib> // for srand(), rand()
+#include <cstdlib>
 #include <vector>
 #include <iostream>
 
-using namespace std;
+//using namespace std;
 
 // 面数
 enum kSurface
@@ -46,11 +46,11 @@ public:
     // 出目合計取得
     int getRollResult();
     // 出目履歴取得
-    vector<int> getRollHistory();
+    std::vector<int> getRollHistory();
     
 private:
     // 履歴
-    vector<int> rollHistory;
+    std::vector<int> rollHistory;
     // 振った回数
     int totalRolls;
     // 出目合計

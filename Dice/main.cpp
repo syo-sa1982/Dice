@@ -14,7 +14,7 @@ int main()
     
     Dice MyDice;
     // デフォルト（6面ダイス）
-    cout << "===========================" << endl;
+    std::cout << "===========================" << std::endl;
     MyDice.roll();
     MyDice.display();
     MyDice.roll();
@@ -25,36 +25,36 @@ int main()
     MyDice.reset();
     MyDice.display();
     
-    cout << "10面===========================" << endl;
+    std::cout << "10面===========================" << std::endl;
     // 10面ダイス
     MyDice.roll(kIcosahedron);
     MyDice.display();
     // 合計値を取得
-    cout << "合計値 : " << MyDice.getRollResult() << endl;
+    std::cout << "合計値 : " << MyDice.getRollResult() << std::endl;
     MyDice.reset();
     
-    cout << "8面===========================" << endl;
+    std::cout << "8面===========================" << std::endl;
     // 8面ダイス
     MyDice.roll(kOctahedral);
     MyDice.display();
     // 合計値を取得
-    cout << "合計値 : " << MyDice.getRollResult() << endl;
+    std::cout << "合計値 : " << MyDice.getRollResult() << std::endl;
     MyDice.reset();
     
-    cout << "10D10===========================" << endl;
+    std::cout << "10D10===========================" << std::endl;
     // 10D10
     MyDice.roll(kIcosahedron,10);
     MyDice.display();
     // 合計値を取得
-    cout << "合計値 : " << MyDice.getRollResult() << endl;
+    std::cout << "合計値 : " << MyDice.getRollResult() << std::endl;
     MyDice.reset();
     
-    cout << "3D6===========================" << endl;
+    std::cout << "3D6===========================" << std::endl;
     // 3D6
     MyDice.roll(kHexahedral,3);
     MyDice.display();
     // 合計値を取得
-    cout << "合計値 : " << MyDice.getRollResult() << endl;
+    std::cout << "合計値 : " << MyDice.getRollResult() << std::endl;
     MyDice.reset();
     
     return 0;
