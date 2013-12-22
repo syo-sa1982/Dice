@@ -8,6 +8,16 @@
 
 #include "Dice.h"
 
+// 面数
+enum kSurface
+{
+    kTetrahedral = 4,
+    kHexahedral = 6,
+    kOctahedral = 8,
+    kIcosahedron = 10,
+    kDodecahedron = 12
+};
+
 int main()
 {
     // 実行サンプル的な

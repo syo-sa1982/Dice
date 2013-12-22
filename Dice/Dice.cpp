@@ -27,22 +27,13 @@ void Dice::roll(int surface, int rollCount)
         // 出目合計値
         this->totalScore += this->rollHistory[i];
     }
+    
 }
 
 void Dice::display()
 {
     std::cout << "TotalRolls : " << this->totalRolls << std::endl;
     std::cout << "TotalScore : " << this->totalScore << std::endl;
-}
-
-int Dice::getRollResult()
-{
-    return this->totalScore;
-}
-
-std::vector<int> Dice::getRollHistory()
-{
-    return this->rollHistory;
 }
 
 void Dice::reset()

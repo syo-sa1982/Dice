@@ -6,48 +6,44 @@
 //  Copyright (c) 2013年 syo-sa. All rights reserved.
 //
 
-#ifndef __Dice__Dice__
-#define __Dice__Dice__
+#ifndef Dice__Dice__
+#define Dice__Dice__
 
 #include <cstdlib>
 #include <vector>
 #include <iostream>
 
-//using namespace std;
-
-// 面数
-enum kSurface
-{
-    kTetrahedral = 4,
-    kHexahedral = 6,
-    kOctahedral = 8,
-    kIcosahedron = 10,
-    kDodecahedron = 12
-};
-
-// 投げる回数
-enum kRollCount
-{
-    kDefaultRoll = 1
-};
 
 class Dice
 {
+    // 面数
+    enum kSurface
+    {
+        kDefaultSurface = 6
+    };
+    
+    // 投げる回数
+    enum kRollCount
+    {
+        kDefaultRoll = 1
+    };
+
+    
 public:
     // コンストラクタ
     Dice();
     // ダイスロール
     // RollCount D Surface (例：3D6 6面ダイスを3回)
-    void roll(int Surface = kHexahedral, int RollCount = kDefaultRoll);
+    void roll(int Surface = kDefaultSurface, int RollCount = kDefaultRoll);
     // 出目表示
     void display();
     // 出目リセット
     void reset();
     // 出目合計取得
-    int getRollResult();
+    inline int getRollResult(){ return this->totalRolls; };
     // 出目履歴取得
-    std::vector<int> getRollHistory();
-    
+    //std::vector<int> getRollHistory() const;
+    inline const std::vector<int>& getRollHistory(){ return this->rollHistory; };
 private:
     // 履歴
     std::vector<int> rollHistory;
@@ -56,4 +52,4 @@ private:
     // 出目合計
     int totalScore;
 };
-#endif /* defined(__Dice__Dice__) */
+#endif /* defined(Dice__Dice__) */
