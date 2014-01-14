@@ -42,7 +42,6 @@ public:
     // 出目合計取得
     inline int getRollResult(){ return this->totalRolls; };
     // 出目履歴取得
-    //std::vector<int> getRollHistory() const;
     inline const std::vector<int>& getRollHistory(){ return this->rollHistory; };
 private:
     // 履歴
